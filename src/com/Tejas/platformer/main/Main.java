@@ -22,14 +22,16 @@ public class Main extends Canvas implements Runnable {
 	private Thread thread;
 	public static int WIDTH, HEIGHT;
 	
-	GameObject object;
-	
+	// Handles the current level of the game
 	LevelHandler handler;
+	// Outputs to the user the current display
 	Camera camera;
 	
 	// Stores the current level
 	private BufferedImage level;
 	
+	// Store a temporary object 
+	GameObject object;
 	
 	Random rand = new Random();
 	
