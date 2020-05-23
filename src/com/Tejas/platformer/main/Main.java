@@ -49,7 +49,7 @@ public class Main extends Canvas implements Runnable {
 		
 		// Load in the file
 		BufferedImageLoader loader = new BufferedImageLoader();
-		level = loader.loadImage("/level1.png");
+		level = loader.loadImage("/level.png");
 		
 		// Create the level in a format the program can understand
 		loadImageLevel(level);
@@ -140,9 +140,12 @@ public class Main extends Canvas implements Runnable {
 	// The update method
 	private void tick()
 	{
+		// Update the handler
 		handler.tick();
+		
 		for(int i = 0; i < handler.object.size(); i++)
 		{
+			// If this object is the player, also update the camera with it
 			if(handler.object.get(i).getID() == ObjectID.Player)
 				camera.tick(handler.object.get(i));
 		}
